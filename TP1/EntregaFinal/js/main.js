@@ -101,7 +101,7 @@
             let imageData;
             let image1 = new Image();
             image1.src = "../img/andromeda.jpg";
-            imagen1.crossOrigin = 'Anonymous';
+            image1.crossOrigin = 'Anonymous';
             image1.onload = function () {
                 canv.width = image1.width;
                 canv.height = image1.height;
