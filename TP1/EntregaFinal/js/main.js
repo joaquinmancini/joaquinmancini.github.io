@@ -100,7 +100,7 @@
             let ctx = canv.getContext("2d");
             let imageData;
             let image1 = new Image();
-            image1.src = "./img/andromeda.jpg";
+            image1.src = "https://miro.medium.com/max/1200/1*hv0Rr5-DKpN_bDomhlTj7Q.jpeg";
             image1.crossOrigin = 'Anonymous';
             image1.onload = function () {
                 canv.width = image1.width;
