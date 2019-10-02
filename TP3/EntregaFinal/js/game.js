@@ -41,6 +41,7 @@ export function startGame() {
         //obtener propiedades de elementos
         bcr.getBCR(playground, adventurer, ip, life);
         distCounter++;
+        distCounter=Math.floor(distCounter/10);
         printDist(distCounter, prevDist, dist);
 
         if (joystick.up && !avatar.jump) {
@@ -64,7 +65,7 @@ export function startGame() {
                 avatar.death(adventurer);
                 ip.style.animationIterationCount = "1";
                 if (distCounter > prevDist) {
-                    prevDist = distCounter/10;
+                    prevDist = distCounter;
                 }
                 cancelAnimationFrame(myID);
             }
@@ -77,7 +78,7 @@ export function startGame() {
         let par1 = document.createElement("p"),
             par2 = document.createElement("p");
         let tNode1 = document.createTextNode("Best dist.: " + previousDistance + " meters"),
-            tNode2 = document.createTextNode("Current dist.: " + Math.floor(distance / 10) + " meters");
+            tNode2 = document.createTextNode("Current dist.: " + distance + " meters");
         par1.appendChild(tNode1);
         par2.appendChild(tNode2);
         div.innerHTML = "";
