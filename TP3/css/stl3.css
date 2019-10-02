@@ -1,0 +1,9 @@
+.clock {
+    border-radius: 50%;
+    background: #fff url(/img/clk.svg) no-repeat center;
+    background-size: 88%;
+    height: 20em;
+    padding-bottom: 31%;
+    position: relative;
+    width: 20em;
+}

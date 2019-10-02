@@ -1,0 +1,195 @@
+/*Animaciones*/
+@keyframes anHL {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: -1024px;
+    }
+}
+
+@keyframes anRunA {
+    0% {
+        background-position: 0px;
+    }
+
+    100% {
+        background-position: -640px;
+    }
+}
+
+@keyframes anJumpA {
+    0% {
+        background-position: 0px;
+    }
+
+    100% {
+        background-position: -480px;
+    }
+}
+
+@keyframes anDeathA {
+    0% {
+        background-position: 0px;
+    }
+
+    100% {
+        background-position: -480px;
+    }
+}
+
+@keyframes anLayA {
+    0% {
+        left: 150px;
+    }
+
+    50% {
+        left: 120px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+@keyframes anRB {
+    from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position: -512px;
+    }
+}
+
+@keyframes anR {
+    0% {
+        left: 960px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+/*Estilos de clases*/
+.runner {
+    width: 1024px;
+    height: 512px;
+    ;
+}
+
+.HillsLayer01 {
+    width: 1024px;
+    height: 512px;
+    position: absolute;
+    background: url('/img/hl1.png');
+    z-index: -5;
+    animation: anHL 300s linear infinite;
+}
+
+.HillsLayer02 {
+    width: 1024px;
+    height: 512px;
+    position: absolute;
+    background: url('/img/hl2.png');
+    z-index: -4;
+    animation: anHL 90s linear infinite;
+}
+
+.HillsLayer03 {
+    width: 1024px;
+    height: 512px;
+    position: absolute;
+    background: url('/img/hl3.png');
+    z-index: -3;
+    animation: anHL 40s linear infinite;
+}
+
+.HillsLayer04 {
+    width: 1024px;
+    height: 512px;
+    position: absolute;
+    background: url('/img/hl4.png');
+    z-index: -2;
+    animation: anHL 15s linear infinite;
+}
+
+.HillsLayer05 {
+    width: 1024px;
+    height: 512px;
+    position: absolute;
+    background: url('/img/hl5.png');
+    z-index: -1;
+    animation: anHL 8s linear infinite;
+}
+
+.HillsLayer06 {
+    width: 1024px;
+    height: 512px;
+    position: absolute;
+    background: url('/img/hl6.png');
+    border-left: solid white 80px;
+    border-right: solid white 80px;
+    z-index: 2;
+    animation: anHL 4s linear infinite;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    top: 410px;
+    left: 150px;
+    position: relative;
+    background: url('/img/adb.png');
+    /*
+    border-radius: 80px;
+    border-style: solid;
+    border-color: black;
+    */
+    z-index: 0;
+    animation: anRunA 1s steps(8) infinite;
+}
+
+.rb {
+    width: 64px;
+    height: 32px;
+    top: 375px;
+    position: relative;
+    background: url('/img/imp1.png');
+    /*
+    border-radius: 32px;
+    border-style: solid;
+    border-color: black;
+    */
+    z-index: 1;
+    animation: anRB 0.8s steps(8) infinite, anR 4s steps(400) infinite;
+}
+
+.lifeMeter {
+    width: 100px;
+    height: 10px;
+    top: 5px;
+    left: 5px;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.lifeMeter2 {
+    width: 100px;
+    height: 10px;
+    top: 5px;
+    left: 5px;
+    position: absolute;
+    background-color: green;
+    border-radius: 5px;
+}
+
+.distance {
+    width: 200px;
+    height: 40px;
+    left: 665px;
+    position: relative;
+}

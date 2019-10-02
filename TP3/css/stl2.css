@@ -1,0 +1,9 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+}
+
+.box:hover {
+    transform: rotate(45deg);
+}

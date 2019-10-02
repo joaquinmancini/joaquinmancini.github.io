@@ -1,0 +1,64 @@
+.bigbox {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    background-color: rgb(204, 201, 0);
+}
+
+.b1 {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: rgb(150, 57, 236);
+    transition: height 2s, background-color 2s;
+}
+
+.b1:hover {
+    height: 575px;
+    background-color: royalblue;
+}
+
+.b2 {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 575px;
+    background-color: royalblue;
+    transition: width 2s, background-color 2s;
+}
+
+.b2:hover {
+    width: 575px;
+    background-color: rgb(54, 221, 54);
+}
+
+.b3 {
+    width: 25px;
+    height: 25px;
+    top: 575px;
+    left: 575px;
+    position: absolute;
+    background-color: rgb(54, 221, 54);
+    transition: height 2s, top 2s, background-color 2s;
+}
+
+.b3:hover {
+    height: 575px;
+    top: 25px;
+    background-color: rgb(223, 116, 16);
+}
+
+.b4 {
+    width: 25px;
+    height: 25px;
+    left: 575px;
+    position: absolute;
+    background-color: rgb(223, 116, 16);
+    transition: width 2s, left 2s, background-color 2s;
+}
+
+.b4:hover {
+    width: 575px;
+    left: 25px;
+    background-color: rgb(150, 57, 236);
+}
