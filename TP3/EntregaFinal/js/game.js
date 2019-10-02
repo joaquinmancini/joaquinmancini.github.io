@@ -87,6 +87,9 @@ export function startGame() {
     //deteccion de eventos de teclas
     let inicio = document.querySelector('.inicio');
     inicio.addEventListener('click', function () {
+        distCounter = 0;
+        lifestyle.width = this.lAux + "px";
+        adventurer.animation = "anRunA 1s steps(8) infinite";
         myID = requestAnimationFrame(loop);
     })
     document.addEventListener('keydown', e => joystick.keyListener(e));
