@@ -82,7 +82,7 @@
     width: 1024px;
     height: 512px;
     position: absolute;
-    background: url('../img/hl1.png');
+    background: url('./img/hl1.png');
     z-index: -5;
     animation: anHL 300s linear infinite;
 }
@@ -91,7 +91,7 @@
     width: 1024px;
     height: 512px;
     position: absolute;
-    background: url('../img/hl2.png');
+    background: url('./img/hl2.png');
     z-index: -4;
     animation: anHL 90s linear infinite;
 }
@@ -100,7 +100,7 @@
     width: 1024px;
     height: 512px;
     position: absolute;
-    background: url('../img/hl3.png');
+    background: url('./img/hl3.png');
     z-index: -3;
     animation: anHL 40s linear infinite;
 }
@@ -109,7 +109,7 @@
     width: 1024px;
     height: 512px;
     position: absolute;
-    background: url('../img/hl4.png');
+    background: url('./img/hl4.png');
     z-index: -2;
     animation: anHL 15s linear infinite;
 }
@@ -118,7 +118,7 @@
     width: 1024px;
     height: 512px;
     position: absolute;
-    background: url('../img/hl5.png');
+    background: url('./img/hl5.png');
     z-index: -1;
     animation: anHL 8s linear infinite;
 }
@@ -127,7 +127,7 @@
     width: 1024px;
     height: 512px;
     position: absolute;
-    background: url('../img/hl6.png');
+    background: url('./img/hl6.png');
     border-left: solid white 80px;
     border-right: solid white 80px;
     z-index: 2;
@@ -140,7 +140,7 @@
     top: 410px;
     left: 150px;
     position: relative;
-    background: url('../img/adb.png');
+    background: url('./img/adb.png');
     z-index: 0;
     animation: anRunA 1s steps(8) infinite;
 }
@@ -150,7 +150,7 @@
     height: 32px;
     top: 375px;
     position: relative;
-    background: url('../img/imp1.png');
+    background: url('./img/imp1.png');
     z-index: 1;
     animation: anRB 0.8s steps(8) infinite, anR 4s steps(400) infinite;
 }
