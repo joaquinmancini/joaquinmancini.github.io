@@ -40,8 +40,7 @@ export function startGame() {
     function loop() {
         //obtener propiedades de elementos
         bcr.getBCR(playground, adventurer, ip, life);
-        distCounter++;
-        distCounter=Math.floor(distCounter/10);
+        distCounter+=Math.floor(1/10);
         printDist(distCounter, prevDist, dist);
 
         if (joystick.up && !avatar.jump) {
