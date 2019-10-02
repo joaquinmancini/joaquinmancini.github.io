@@ -76,8 +76,8 @@ export function startGame() {
     function printDist(distance, previousDistance, div) {
         let par1 = document.createElement("p"),
             par2 = document.createElement("p");
-        let tNode1 = document.createTextNode("Best dist.: " + previousDistance / 10 + " meters"),
-            tNode2 = document.createTextNode("Current dist.: " + distance / 10 + " meters");
+        let tNode1 = document.createTextNode("Best dist.: " + previousDistance + " meters"),
+            tNode2 = document.createTextNode("Current dist.: " + Math.floor(distance / 10) + " meters");
         par1.appendChild(tNode1);
         par2.appendChild(tNode2);
         div.innerHTML = "";
