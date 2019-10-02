@@ -34,13 +34,13 @@ export class Avatar {
             this.y = playgroundRect.height - this.height - grHt;
             this.velY = 0;
             //define nuevamente animacion de correr
-            adventurer.style.background = "url('/img/adb.png')";
+            adventurer.style.background = "url('../img/adb.png')";
             adventurer.style.animation = "anRunA 1s steps(8) infinite";
         }
     }
     death(adventurer) {
         this.dead = true;
-        adventurer.style.background = "url('/img/death.png') no-repeat";
+        adventurer.style.background = "url('../img/death.png') no-repeat";
         adventurer.style.animation = "anDeathA 2s steps(6) forwards, anLayA 2s linear forwards";
 
     }

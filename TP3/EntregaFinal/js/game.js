@@ -45,7 +45,7 @@ export function startGame() {
 
         if (joystick.up && !avatar.jump) {
             avatar.velY -= 17;
-            adventurer.style.background = "url('/img/jump.png')";
+            adventurer.style.background = "url('../img/jump.png')";
             adventurer.style.animation = "anJumpA 1.25s steps(6)";
             avatar.jump = true;
         }
