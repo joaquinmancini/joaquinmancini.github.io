@@ -64,7 +64,7 @@ export function startGame() {
                 avatar.death(adventurer);
                 ip.style.animationIterationCount = "1";
                 if (distCounter > prevDist) {
-                    prevDist = distCounter;
+                    prevDist = distCounter/10;
                 }
                 cancelAnimationFrame(myID);
             }
