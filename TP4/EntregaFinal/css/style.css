@@ -1,0 +1,22 @@
+*{}
+
+.tituloM{
+    text-align: center; 
+    font-weight: bold;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .btn{
+    color: white;
+  }
+ 
