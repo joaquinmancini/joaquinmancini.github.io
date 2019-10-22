@@ -13,70 +13,69 @@ import {
 
 export function startGame() {
     //objetos
-    let avatar, imp, joystick, bcr;
+    let avatar, joystick, bcr;
     let myID, distCounter = 0,
-        prevDist = 0,
-        lAux;
+        previousDistance = 0,
+        health = 100,
+        speed=4;
     //obtencion de elementos
     let playground = document.querySelector('.HillsLayer05'),
         adventurer = document.querySelector('.avatar'),
         ip = document.querySelector('.rb'),
+        lifeBorder = document.querySelector('.lifeMeter'),
         life = document.querySelector('.lifeMeter2'),
-        dist = document.querySelector('.distance');
-
+        dist = document.querySelector('.distance'),
+        inicio = document.querySelector('.inicio');
     bcr = new Bcr();
+
     //obtencion de propiedades de elementos
     bcr.getBCR(playground, adventurer, ip, life);
-    lAux = bcr.lfBCR.width;
     //definicion de altura de 'piso'
     let groundHeight = bcr.plgrBCR.height - bcr.advtBCR.height - (bcr.advtBCR.top - bcr.plgrBCR.top);
     //definicion de objetos
-    avatar = new Avatar(bcr.advtBCR.width, bcr.advtBCR.height, bcr.advtBCR.x, bcr.advtBCR.y, bcr.lfBCR.width);
-    imp = new Monster(bcr.impBCR.width, bcr.impBCR.height, bcr.impBCR.x, bcr.impBCR.y);
+    avatar = new Avatar(bcr.advtBCR.width, bcr.advtBCR.height, bcr.advtBCR.x, bcr.advtBCR.y, health);
     joystick = new Joystick();
-
-
     //funcion loop que toma las modificaciones del juego hasta que ocurra condicion
     function loop() {
         //obtener propiedades de elementos
         bcr.getBCR(playground, adventurer, ip, life);
+        //aumentar distancia e imprimirla
         distCounter++;
-        printDist(distCounter, prevDist, dist);
-
-        if (joystick.up && !avatar.jump) {
-            avatar.velY -= 17;
-            adventurer.style.background = "url('./img/jump.png')";
-            adventurer.style.animation = "anJumpA 1.25s steps(6)";
-            avatar.jump = true;
-        }
-        avatar.velY += 0.45;
-        avatar.y += avatar.velY;
-        avatar.velY *= 0.95;
+        printDist(distCounter, previousDistance, dist);
+        //salto personaje
+        avatar.jumping(joystick, adventurer);
         //controlar que no pase del piso
         avatar.checkFloor(bcr.plgrBCR, groundHeight, adventurer);
         adventurer.style.top = avatar.y + "px";
         //chequear colisiones
+
         if (avatar.collision(bcr.advtBCR, bcr.impBCR)) {
-            if (avatar.lifeCounter > 0) {
+            if (avatar.life > 0) {
                 avatar.hurt(life);
+                //console.log(avatar.life);
                 myID = requestAnimationFrame(loop);
             } else {
                 avatar.death(adventurer);
                 ip.style.animationIterationCount = "1";
-                if (distCounter > prevDist) {
-                    prevDist = distCounter;
+                if (distCounter > previousDistance) {
+                    previousDistance = distCounter;
                 }
+                inicio.style.display = "inline";
                 cancelAnimationFrame(myID);
             }
         } else {
+            if (bcr.impBCR.left <145) {
+                speed*=0.99;
+                ip.style.animation = "anRB 0.8s steps(8) infinite, anR 4s steps(400) infinite";
+            }            
             myID = requestAnimationFrame(loop);
         }
     };
-    //actualiza distancia recorrida
-    function printDist(distance, previousDistance, div) {
+    //actualiza en pantalla la distancia recorrida
+    function printDist(distance, pDistance, div) {
         let par1 = document.createElement("p"),
             par2 = document.createElement("p");
-        let tNode1 = document.createTextNode("Best dist.: " + previousDistance + " meters"),
+        let tNode1 = document.createTextNode("Best dist.: " + Math.floor(pDistance / 10) + " meters"),
             tNode2 = document.createTextNode("Current dist.: " + Math.floor(distance / 10) + " meters");
         par1.appendChild(tNode1);
         par2.appendChild(tNode2);
@@ -84,16 +83,19 @@ export function startGame() {
         div.appendChild(par1);
         div.appendChild(par2);
     }
+    //funcion de inicio de juego
+    function go() {
+        if (avatar.dead) {
+            avatar.dead = false;
+            distCounter = 0;
+            avatar.start(adventurer, lifeBorder, life);
+            ip.style.animation = "anRB 0.8s steps(8) infinite, anR 4s steps(400) infinite";
+            inicio.style.display = "none";
+            myID = requestAnimationFrame(loop);
+        }
+    }
     //deteccion de eventos de teclas
-    let inicio = document.querySelector('.inicio');
-    inicio.addEventListener('click', function () {
-        distCounter = 0;
-        console.log("haa");
-        life.style.width = this.lAux + "px";
-        adventurer.animation = "anRunA 1s steps(8) infinite";
-        myID = requestAnimationFrame(loop);
-    })
+    inicio.addEventListener('click', e => go());
     document.addEventListener('keydown', e => joystick.keyListener(e));
     document.addEventListener('keyup', e => joystick.keyListener(e));
-    //llamado a funcion de animacion para que arranque el juego 
 }

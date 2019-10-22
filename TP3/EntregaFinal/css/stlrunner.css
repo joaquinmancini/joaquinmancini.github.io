@@ -140,9 +140,7 @@
     top: 410px;
     left: 150px;
     position: relative;
-    background: url('../img/adb.png');
     z-index: 0;
-    animation: anRunA 1s steps(8) infinite;
 }
 
 .rb {
@@ -152,7 +150,6 @@
     position: relative;
     background: url('../img/imp1.png');
     z-index: 1;
-    animation: anRB 0.8s steps(8) infinite, anR 4s steps(400) infinite;
 }
 
 .lifeMeter {
@@ -163,10 +160,10 @@
     position: absolute;
     border-radius: 5px;
     border: 1px solid black;
+    display: none;
 }
 
 .lifeMeter2 {
-    width: 100px;
     height: 10px;
     top: 5px;
     left: 5px;

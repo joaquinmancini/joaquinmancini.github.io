@@ -1,16 +1,15 @@
 'use strict'
 export class Avatar {
-    constructor(width, height, x, y, lc) {
-        this.width = width;
-        this.height = height;
+    constructor(w, h, x, y, l) {
+        this.width = w;
+        this.height = h;
         this.x = x;
         this.y = y;
         this.velX = 0;
         this.velY = 0;
-        this.lifeCounter = lc;
+        this.life = l;
         this.jump = true;
-        this.attack = false;
-        this.dead = false;
+        this.dead = true;
     }
     //chequea si hay colision de dos objetos
     collision(avatarRect, objRect) {
@@ -24,29 +23,45 @@ export class Avatar {
         return Math.sqrt((Math.pow(objRect.x - avatarRect.x, 2) + Math.pow(objRect.y - avatarRect.y, 2)))
     }
     //salto de avatar
-    jump() {
-
+    jumping(j, a) {
+        if (j.up && !this.jump) {
+            this.velY -= 15;
+            a.style.background = "url('./img/jump.png')";
+            a.style.animation = "anJumpA 1.25s steps(6)";
+            this.jump = true;
+        }
+        this.velY += 0.4;
+        this.y += this.velY;
+        this.velY *= 0.95;
     }
     //control piso
-    checkFloor(playgroundRect, grHt, adventurer) {
+    checkFloor(playgroundRect, grHt, a) {
         if (this.y > playgroundRect.height - this.height - grHt) {
             this.jump = false;
             this.y = playgroundRect.height - this.height - grHt;
             this.velY = 0;
             //define nuevamente animacion de correr
-            adventurer.style.background = "url('./img/adb.png')";
-            adventurer.style.animation = "anRunA 1s steps(8) infinite";
+            a.style.background = "url('./img/adb.png')";
+            a.style.animation = "anRunA 1s steps(8) infinite";
         }
     }
-    death(adventurer) {
+    //muerte del personaje
+    death(a) {
         this.dead = true;
-        adventurer.style.background = "url('./img/death.png') no-repeat";
-        adventurer.style.animation = "anDeathA 2s steps(6) forwards, anLayA 2s linear forwards";
-
+        a.style.background = "url('./img/death.png') no-repeat";
+        a.style.animation = "anDeathA 2s steps(6) forwards, anLayA 2s linear forwards";
     }
-    hurt(life) {
-        this.lifeCounter-=2;
-        life.style.width = this.lifeCounter + "px";
-        
+    //personaje herido
+    hurt(l) {
+        this.life -= 2;
+        l.style.width = this.life + "px";
+    }
+    start(a, lB, l) {
+        this.life = 100;
+        l.style.width = this.life + "px";
+        lB.style.display = "inline";
+        l.style.width = "100px";
+        a.style.background = "url('./img/adb.png')";
+        a.animation = "anRunA 1s steps(8) infinite";
     }
 }
