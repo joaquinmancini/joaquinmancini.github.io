@@ -62,7 +62,11 @@ export function startGame() {
                     if (distCounter > previousDistance) {
                         previousDistance = distCounter;
                     }
+                    front.style.background="url('../img/end.png')";
                     inicio.style.display = "inline";
+                    setTimeout(() => {
+                        front.style.display="inline";
+                    }, 2000);
                     cancelAnimationFrame(myID);
                 }
             } else {
