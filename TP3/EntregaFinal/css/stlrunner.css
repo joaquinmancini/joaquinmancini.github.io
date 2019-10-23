@@ -128,10 +128,24 @@
     height: 512px;
     position: absolute;
     background: url('../img/hl6.png');
-    border-left: solid white 80px;
-    border-right: solid white 80px;
     z-index: 2;
     animation: anHL 4s linear infinite;
+}
+
+.Sides {
+    width: 1024px;
+    height: 512px;
+    position: absolute;    
+    background: url('../img/sides.png');
+    z-index: 3;
+}
+
+.FrontGround {    
+    width: 1024px;
+    height: 512px;
+    position: absolute;    
+    background: url('../img/start.png');
+    z-index: 4;
 }
 
 .avatar {
@@ -156,7 +170,7 @@
     width: 100px;
     height: 10px;
     top: 5px;
-    left: 5px;
+    left: 70px;
     position: absolute;
     border-radius: 5px;
     border: 1px solid black;
@@ -166,7 +180,7 @@
 .lifeMeter2 {
     height: 10px;
     top: 5px;
-    left: 5px;
+    left: 70px;
     position: absolute;
     background-color: green;
     border-radius: 5px;
@@ -175,6 +189,6 @@
 .distance {
     width: 200px;
     height: 40px;
-    left: 665px;
+    left: 750px;
     position: relative;
 }

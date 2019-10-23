@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         load('html/runner.html');
         setTimeout(() => {
             startGame();
-        }, 1000);
+        }, 1200);
     }
 
     firstPage();

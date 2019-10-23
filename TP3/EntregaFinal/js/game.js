@@ -17,7 +17,7 @@ export function startGame() {
     let myID, distCounter = 0,
         previousDistance = 0,
         health = 100,
-        speed=4;
+        speed = 4;
     //obtencion de elementos
     let playground = document.querySelector('.HillsLayer05'),
         adventurer = document.querySelector('.avatar'),
@@ -25,7 +25,8 @@ export function startGame() {
         lifeBorder = document.querySelector('.lifeMeter'),
         life = document.querySelector('.lifeMeter2'),
         dist = document.querySelector('.distance'),
-        inicio = document.querySelector('.inicio');
+        inicio = document.querySelector('.inicio'),
+        front = document.querySelector('.FrontGround');
     bcr = new Bcr();
 
     //obtencion de propiedades de elementos
@@ -37,38 +38,40 @@ export function startGame() {
     joystick = new Joystick();
     //funcion loop que toma las modificaciones del juego hasta que ocurra condicion
     function loop() {
-        //obtener propiedades de elementos
-        bcr.getBCR(playground, adventurer, ip, life);
-        //aumentar distancia e imprimirla
-        distCounter++;
-        printDist(distCounter, previousDistance, dist);
-        //salto personaje
-        avatar.jumping(joystick, adventurer);
-        //controlar que no pase del piso
-        avatar.checkFloor(bcr.plgrBCR, groundHeight, adventurer);
-        adventurer.style.top = avatar.y + "px";
-        //chequear colisiones
+        if (!avatar.dead) {
+            //obtener propiedades de elementos
+            bcr.getBCR(playground, adventurer, ip, life);
+            //aumentar distancia e imprimirla
+            distCounter++;
+            printDist(distCounter, previousDistance, dist);
+            //salto personaje
+            avatar.jumping(joystick, adventurer);
+            //controlar que no pase del piso
+            avatar.checkFloor(bcr.plgrBCR, groundHeight, adventurer);
+            adventurer.style.top = avatar.y + "px";
+            //chequear colisiones
 
-        if (avatar.collision(bcr.advtBCR, bcr.impBCR)) {
-            if (avatar.life > 0) {
-                avatar.hurt(life);
-                //console.log(avatar.life);
-                myID = requestAnimationFrame(loop);
-            } else {
-                avatar.death(adventurer);
-                ip.style.animationIterationCount = "1";
-                if (distCounter > previousDistance) {
-                    previousDistance = distCounter;
+            if (avatar.collision(bcr.advtBCR, bcr.impBCR)) {
+                if (avatar.life > 0) {
+                    avatar.hurt(life);
+                    //console.log(avatar.life);
+                    myID = requestAnimationFrame(loop);
+                } else {
+                    avatar.death(adventurer);
+                    ip.style.animationIterationCount = "1";
+                    if (distCounter > previousDistance) {
+                        previousDistance = distCounter;
+                    }
+                    inicio.style.display = "inline";
+                    cancelAnimationFrame(myID);
                 }
-                inicio.style.display = "inline";
-                cancelAnimationFrame(myID);
+            } else {
+                if (bcr.impBCR.left < 145) {
+                    speed *= 0.99;
+                    ip.style.animation = "anRB 0.8s steps(8) infinite, anR 4s steps(400) infinite";
+                }
+                myID = requestAnimationFrame(loop);
             }
-        } else {
-            if (bcr.impBCR.left <145) {
-                speed*=0.99;
-                ip.style.animation = "anRB 0.8s steps(8) infinite, anR 4s steps(400) infinite";
-            }            
-            myID = requestAnimationFrame(loop);
         }
     };
     //actualiza en pantalla la distancia recorrida
@@ -86,6 +89,7 @@ export function startGame() {
     //funcion de inicio de juego
     function go() {
         if (avatar.dead) {
+            front.style.display = "none";
             avatar.dead = false;
             distCounter = 0;
             avatar.start(adventurer, lifeBorder, life);
