@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-lg-6 suscripcion ">
+
+            <p class="light-black">Paso 3 de 4</p>
+
+            <h4 class="bold-black">Ingresa tus datos de pago</h4>
+
+            <form>
+                <div class="form-group">
+                    <label class="bold-black">Apellido y Nombre</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Apellido, Nombre">
+                </div>
+                <div class="form-group">
+                    <label class="bold-black">Numero de tarjeta</label>
+                    <input type="text" class="form-control creditCard" id="numero-tarjeta" aria-describedby="number"
+                        placeholder="Numero de tarjeta">
+                </div>
+                <div class="form-group">
+                    <label class="bold-black">Fecha de vencimiento</label>
+                    <input type="month" class="form-control" id="vencimiento-tarjeta" aria-describedby="number"
+                        placeholder="00/00">
+                </div>
+                <div class="form-group">
+                    <label class="bold-black">Codigo de seguridad</label>
+                    <input type="number" class="form-control" id="ccv-code" aria-describedby="ccv-code"
+                        placeholder="Codigo de seguridad (CVV)">
+                </div>
+            </form>
+            <div class="row d-flex justify-content-center">
+                <button type="submit" onclick="suscription_second_step()" class=" btn btn-cancelar">Cancelar</button>
+                <button type="submit" onclick="suscription_forth_step()" class="ml-5 btn btn-continuar">Continuar</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+<head>
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/resumen-pelicula.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+
+
+<div class="container-fluid ">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 image-joker p-0 ">
+      <div class=" header-resumen" style=" opacity: 0.8; background-image: url('images/joker.jpg')">
+      </div>
+
+      <div class="btn-play-resumen">
+        <a onclick="reproductor()" href="">
+          <i class="material-icons btn-play-mobile ">
+            play_circle_outline
+          </i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="overlay row ">
+    <div class="col-6">
+      <h1 style="font-size:3vw;" class="text-left bold-white ml-2 ">THE JOKER</h1>
+      <h5 style="font-size:2vw;" class="text-left bold ml-2  ">Ultimo estreno</h5>
+      <p style="font-size:1vw;" class="text-left light ml-2 ">La pasión de Arthur Fleck, un hombre ignorado por la
+        sociedad, es hacer
+        reír a la gente. Sin embargo, una serie de trágicos sucesos harán que su visión del mundo se
+        distorsione
+        considerablemente convirtiéndolo en un brillante criminal.</p>
+    </div>
+    <div class="col-6 float-right">
+      <div class="btn-fav-resumen">
+        <button type="button" id="fav-resumen" class="btn btn-fav m-0 p-0">Agregar a
+          favoritos</button>
+      </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 mt-3">
+      <p class="like">A 13458 personas les gusto esto</p>
+      <p class="dislike">A 351 personas les gusto esto</p>
+    </div>
+
+
+
+  </div>
+  <div class="row d-flex mr-5 mt-4 ml-3 justify-content-start">
+
+    <p class="bold ">Dinos que te parecio</p>
+    <div class="icon-like ml-5">
+        <a href="#middle">
+
+      <i class="material-icons like-button ">
+        thumb_up
+      </i>
+    </a>
+    </div>
+
+    <div class="icon-like ml-3">
+      <a href="#middle">
+      <i class="material-icons dislike-button ">
+        thumb_down
+      </i>
+    </a>
+    </div>
+
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-12">
+      <form>
+        <div class="form-group">
+          <input class="form-control" id="exampleFormControlTextarea1" placeholder="Escribe tu opinion"
+            rows="2"></input>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-2 d-flex justify-content-center">
+        <div class="button">
+            <div class="container">
+              <div class="tick">
+              </div>
+            </div>
+          </div>
+    </div>
+
+  </div>
+  <div class="row d-flex ml-3  mt-4 justify-content-start">
+
+      <p class="bold  mt-2 ">Opiniones de otros usuarios</p>
+     
+  
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-12 mt-2">
+          <div class="card">
+              <div class="card-body">
+                  <i class="material-icons">
+                      person
+                      </i>
+                Increible, grandes actuaciones!!
+                <div class="icon-like ml-5 float-right">
+
+                    <i class="material-icons like ">
+                      thumb_up
+                    </i>
+                  </div>
+              </div>
+            </div>
+            <div class="card mt-2">
+                <div class="card-body">
+                    <i class="material-icons">
+                        person
+                        </i>
+                  De lo mejor que he visto
+                  <div class="icon-like ml-5 float-right">
+  
+                      <i class="material-icons like ">
+                        thumb_up
+                      </i>
+                    </div>
+                </div>
+              </div>
+              <div class="card mt-2">
+                  <div class="card-body">
+                      <i class="material-icons">
+                          person
+                          </i>
+                    Falta de accion, aburrida por momentos
+                    <div class="icon-like ml-5 float-right">
+    
+                        <i class="material-icons dislike ">
+                          thumb_down
+                        </i>
+                      </div>
+                  </div>
+                </div>
+  
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-2 mt-2 d-flex justify-content-center">
+          <div class="btn-enviar">
+            <button type="button" id="fav-resumen" class="btn btn-enviar m-0 p-0">Ver mas</button>
+          </div>
+        </div>
+    
+      </div>
+</div>

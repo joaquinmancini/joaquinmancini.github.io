@@ -1,0 +1,37 @@
+.bold{
+    font-weight: bold;
+}
+.bold-black{
+    font-weight: bold;
+    color: black;
+}
+.light{
+    font-weight: lighter;
+}
+.light-black{
+    font-weight: lighter;
+    color: black;
+}
+.bg-custom{
+    background-color: #23013a;
+}
+
+
+/**/
+.suscripcion{
+    margin-top: 5%;
+}
+.btn-cancelar{
+    color: white;
+    background-color: rgb(201, 63, 63);
+    font-weight: normal;
+}
+.btn-continuar{
+    color: white;
+    background-color: #53347E;
+    font-weight: normal;
+}
+.card:active{
+    border-color: #53347E !important;
+    
+}

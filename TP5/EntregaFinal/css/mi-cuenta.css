@@ -1,0 +1,65 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+}
+
+h6 {
+    color: white;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bold-black {
+    font-weight: bold;
+    color: black;
+}
+
+.bold-white {
+    font-weight: bold;
+    color: white;
+}
+
+.light {
+    font-weight: lighter;
+}
+
+.light-black {
+    font-weight: lighter;
+    color: black;
+}
+
+.btn-cancelar{
+    color: white;
+    background-color: rgb(201, 63, 63);
+    font-weight: normal;
+}
+.btn-suscribirse {
+    color: white;
+    background-color: #53347E;
+    font-weight: normal;
+}
+
+.btn-suscribirse:hover {
+    border: solid 1px white;
+    color: white;
+}
+
+.user {
+    position: relative;
+}
+
+.bg-custom {
+    background-color: #23013a;
+    height: 79px;
+}
+
+.bg-custom {
+    background-color: rgb(68, 41, 107);
+    background: linear-gradient(180deg, rgba(68, 41, 107, 1) 0%, rgb(255, 255, 255) 100%);
+}
+.susc-pago{
+    border-left: 3px solid rgb(68, 41, 107);
+    bottom: 0%;    
+}

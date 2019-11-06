@@ -1,0 +1,113 @@
+
+
+.btn-play-mobile{
+    font-size: 120px;
+    float: right;
+    top: 30%;
+    left: 45%;
+    z-index:10;
+    position: absolute;
+}
+
+.header-resumen{
+    position: relative;
+    width: 100%;
+    min-height: 550px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+.overlay{
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(94, 92, 92, 0.425) 0%, rgba(255, 255, 255, 0) 100%);
+    width: 100%;
+    height: 30%;
+    z-index: 20;
+}
+.btn-fav-resumen{
+    margin-top: 15%;
+    float: right;
+    height: 100%;
+    display: flex !important;
+}
+
+.like{
+    color: blueviolet;
+}
+.like-button{
+    color: blueviolet;
+
+}
+.dislike-button{
+    color: darkred;
+
+}
+.like-button:hover{
+    transform: scale(1.5);
+}
+.dislike-button:hover{
+    transform: scale(1.5);
+}
+.dislike{
+    color: darkred;
+}
+
+.form-group{
+    color: white !important;
+}
+input::placeholder{
+    color: white;
+}
+
+.btn-enviar{
+    text-align: center;
+    height: 8vh;
+    background-color: #53347E;
+    width: 8vw;
+    
+}
+.card{
+    background: rgb(73, 80, 87);
+    
+}
+
+.card-body:hover .material-icons{
+    transform: scale(1.5);
+
+}
+.button, .tick {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+  }
+  .button {
+    width: 100px;
+    height: 40px;
+    background:  #53347E;
+    border-radius: 6px;
+    transition: all .3s cubic-bezier(0.67, 0.17, 0.40, 0.83);
+  }  
+  .button svg {
+    transform: rotate(360deg);
+    transition: all .5s;
+  }
+  .button__circle {
+    width: 80px;
+    height: 80px;
+    background: mediumseagreen;
+    border-radius: 50%;
+    transform: rotate(-360deg);
+  }
+  .button:hover {
+    cursor: pointer;
+  }
+  .tick {
+    color: white;
+    font-size: 1em;
+    transition: all .9s;
+  }

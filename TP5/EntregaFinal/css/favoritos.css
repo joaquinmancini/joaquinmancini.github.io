@@ -1,0 +1,13 @@
+*{
+    color: white;
+}
+
+.search-favoritos{
+    text-align: center;
+    color: white;
+    opacity: 1;
+    border-bottom: 1px solid #57037e !important;
+}
+::placeholder{
+    color: aliceblue;
+}

@@ -1,0 +1,296 @@
+* {
+  color: aliceblue !important;
+  font-weight: bold;
+}
+
+
+#game {
+  position: absolute;
+  margin-left: -15px;
+  width: 960px;
+  height: 540px;
+  z-index: 1;
+}
+.score {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  z-index: 30;
+  left: 650px;
+  top: 20px;
+}
+
+#sky {
+  position: absolute;
+  width: 960px;
+  height: 540px;
+  background: url("../images/game/Layers/sky.png");
+  background-size: 100% auto;
+}
+
+#clouds {
+  width: 960px;
+  height: 540px;
+  z-index: 2;
+  position: absolute;
+  background: url("../images/game/Layers/clouds.png");
+  background-repeat: repeat-x;
+  animation-play-state: running;
+  animation: clouds linear 120s infinite;
+}
+
+@keyframes clouds {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -960px, 0;
+  }
+}
+#rocks {
+  position: absolute;
+  width: 960px;
+  height: 540px;
+  z-index: 3;
+  background: url("../images/game/Layers/rocks.png");
+  background-repeat: repeat-x;
+  animation-play-state: running;
+  animation: clouds linear 90s infinite;
+}
+
+@keyframes rocks {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -960px, 0;
+  }
+}
+#hills {
+  width: 960px;
+  height: 540px;
+  z-index: 4;
+  position: absolute;
+  background: url("../images/game/Layers/hills.png");
+  background-repeat: repeat-x;
+  animation-play-state: running;
+  animation: clouds linear 70s infinite;
+}
+@keyframes hills {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -960px, 0;
+  }
+}
+
+#castle {
+  width: 960px;
+  height: 540px;
+  z-index: 5;
+  position: absolute;
+  background: url("../images/game/Layers/castle.png");
+  background-repeat: repeat-x;
+  animation-play-state: running;
+  animation: clouds linear 70s infinite;
+}
+
+@keyframes castle {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -960px, 0;
+  }
+}
+
+#trees {
+  width: 960px;
+  height: 540px;
+  z-index: 6;
+  position: absolute;
+  background: url("../images/game/Layers/trees.png");
+  background-size: 100%;
+  background-repeat: repeat-x;
+  animation-play-state: running;
+  animation: trees linear 40s infinite;
+}
+
+@keyframes trees {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -960px, 0;
+  }
+}
+#ground {
+  width: 960px;
+  height: 540px;
+  position: absolute;
+  background: url("../images/game/Layers/ground.png");
+  z-index: 7;
+  background-repeat: repeat-x;
+  animation-play-state: running;
+  animation: ground infinite 5s linear;
+}
+
+@keyframes ground {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -960px, 0;
+  }
+}
+
+#fireball {
+  width: 100px;
+  height: 60px;
+
+  z-index: 8;
+  position: absolute;
+  transform: translate(860px, 350px);
+  background: url("../images/game/fireball.png");
+  animation: fireball 3s steps(5) infinite;
+}
+
+@keyframes fireball {
+  0% {
+    transform: translate(860px, 350px);
+  }
+  10% {
+    transform: translate(760px, 350px);
+  }
+  30% {
+    transform: translate(660px, 350px);
+  }
+  30% {
+    transform: translate(560px, 350px);
+  }
+  40% {
+    transform: translate(460px, 350px);
+  }
+  50% {
+    transform: translate(360px, 350px);
+  }
+  60% {
+    transform: translate(260px, 350px);
+  }
+  70% {
+    transform: translate(160px, 350px);
+  }
+  80% {
+    transform: translate(60px, 350px);
+  }
+  90% {
+    transform: translate(-160px, 350px);
+  }
+  100% {
+    transform: translate(-260px, 350px);
+  }
+}
+
+/* PLAYER MOVES */
+
+.player {
+  width: 100px;
+  height: 150px;
+  z-index: 8;
+  margin-top: 290px;
+  margin-left: 150px;
+  position: absolute;
+  background: url("../images/game/pj.png");
+  background-repeat: repeat-x;
+  animation: player 1s steps(10) infinite;
+}
+@keyframes player {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1243px 0;
+  }
+}
+.dead {
+  width: 200px;
+  height: 150px;
+  z-index: 8;
+  margin-top: 300px;
+  margin-left: 90px;
+  position: absolute;
+  background: url("../images/game/dead.png");
+  background-repeat: repeat-x;
+  animation: dead 2s steps(10) infinite;
+  animation-iteration-count: 1;
+}
+@keyframes dead {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1903px 0;
+  }
+}
+.jump {
+  width: 100px;
+  height: 150px;
+  z-index: 8;
+  margin-top: 190px;
+  margin-left: 150px;
+  position: absolute;
+  background: url("../images/game/jump.png");
+  animation: player 1s steps(10) infinite;
+}
+
+.gameOver {
+  position: absolute;
+  z-index: 40;
+  visibility: hidden;
+}
+.startGame {
+  position: absolute;
+  z-index: 40;
+  visibility: visible;
+}
+
+.instrucciones {
+  height: 100px;
+  width: 200px;
+  margin-top: 150px;
+  margin-left: 947px;
+  position: absolute;
+  z-index: 80;
+  visibility: visible;
+}
+.playAgain {
+  width: 200px;
+  margin-top: 450px;
+  margin-left: 380px;
+  position: absolute;
+  z-index: 100;
+  visibility: hidden;
+}
+.boton {
+  color: black;
+}
+.botonIndex{
+  width: 200px;
+  margin-top: 50px;
+  margin-left: 1000px;
+  position: absolute;
+  z-index: 200;
+}
+.buttonBack{
+  background-color: black;
+  border-radius: 25px;
+  color: white;
+  padding: 20px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

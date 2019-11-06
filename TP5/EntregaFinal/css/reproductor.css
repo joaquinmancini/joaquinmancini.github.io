@@ -1,0 +1,52 @@
+* {
+    overflow: hidden;
+}
+
+.rep {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+.rep-line {
+    bottom: 7%;
+    position: absolute;
+    width: 100%;
+    height: 1vh;
+    background-color: blueviolet;
+    z-index: 2;
+}
+
+.ic {
+    bottom: 0.7%;
+    position: absolute;
+}
+
+.btn-play {
+    left: 2%;
+}
+
+.btn-replay {
+    left: 5%;
+}
+
+.btn-forward {
+    left: 8%;
+}
+.btn-title{
+    left: 40%;
+    bottom: 1.8%;
+}
+.btn-episodes{
+    left: 87%;
+}
+.btn-volume{
+    left: 90%;
+}
+.btn-subtitles{   
+    left: 93%; 
+}
+.btn-fullscreen{   
+    left: 96%; 
+}
