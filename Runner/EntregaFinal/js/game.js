@@ -19,6 +19,11 @@ export function startGame() {
         health = 100;
     let win = false,
         colliding = false;
+    let audio_collect = new Audio('./sound/collect.wav'),
+        audio_jump = new Audio('./sound/jump.wav'),
+        audio_hit = new Audio('./sound/hit.wav'),
+        audio_victory = new Audio('./sound/victory.mp3'),
+        audio_death = new Audio('./sound/death.mp3');
     //obtencion de elementos
     let p1 = document.querySelector('.HillsLayer01'),
         p2 = document.querySelector('.HillsLayer02'),
@@ -56,23 +61,27 @@ export function startGame() {
             printDist(distCounter, previousDistance, dist);
             if (previousDistance == 5) {
                 stop("win");
+                audio_victory.play();
                 cancelAnimationFrame(myID);
             }
             //salto personaje
-            avatar.jumping(joystick, adventurer);
+            avatar.jumping(joystick, adventurer, audio_jump);
             //controlar que no pase del piso
             avatar.checkFloor(bcr.plgrBCR, groundHeight, adventurer);
             adventurer.style.top = avatar.y + "px";
             //chequear colisiones
             if (avatar.collision(bcr.advtBCR, bcr.impBCR)) {
+                audio_hit.play();
                 if (avatar.life > 0) {
                     avatar.hurt(life, adventurer);
                     myID = requestAnimationFrame(loop);
                 } else {
                     avatar.death(adventurer);
                     stop("lose");
+                    audio_death.play();
                 }
             } else if (avatar.collision(bcr.advtBCR, bcr.ppBCR)) {
+                audio_collect.play();
                 pp.style.background = "url('./img/puff.png')";
                 setTimeout(() => {
                     pp.classList.remove("pp");

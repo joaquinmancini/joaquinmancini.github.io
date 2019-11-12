@@ -23,11 +23,12 @@ export class Avatar {
         return Math.sqrt((Math.pow(objRect.x - avatarRect.x, 2) + Math.pow(objRect.y - avatarRect.y, 2)))
     }
     //salto de avatar
-    jumping(j, a) {
+    jumping(j, a, audio) {
         if (j.up && !this.jump) {
             this.velY -= 15;
             a.style.background = "url('./img/jump.png')";
             a.style.animation = "anJumpA 1.25s steps(6)";
+            audio.play();
             this.jump = true;
         }
         this.velY += 0.4;
