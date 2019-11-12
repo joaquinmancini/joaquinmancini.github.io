@@ -115,7 +115,7 @@
 .runner {
     width: 1024px;
     height: 512px;
-    ;
+    position: absolute;
 }
 
 .HillsLayer01 {
@@ -192,7 +192,7 @@
     width: 1024px;
     height: 512px;
     position: absolute;
-    z-index: 4;
+    z-index: 3;
     color: beige;
 }
 
@@ -240,7 +240,7 @@ h1.win-text {
 .SideRight {
     width: 65px;
     height: 512px;
-    left: 1072px;
+    right: 0px;
     position: absolute;
     background-color: white;
     z-index: 4;
